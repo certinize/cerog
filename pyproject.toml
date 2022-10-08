@@ -1,11 +1,15 @@
 [tool.poetry]
-name = "cerog"
+name = "app"
 version = "0.1.0"
 description = ""
 authors = ["Hju Kneyck Flores <hjucode@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+starlite = "^1.25.0"
+uvicorn = {extras = ["standard"], version = "^0.18.3"}
+sqlmodel = "^0.0.8"
+asyncpg = "^0.26.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

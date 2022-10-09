@@ -13,7 +13,8 @@ class LoggerService:
     async def create_entry(
         self, data: log_entries.LogEntries, database: sqlalchemy_asyncio.AsyncEngine
     ):
-        data.id = uuid.uuid4()
+        data.id = uuid.uuid4() if data.id is None else data.id
+
         async with AsyncSession(database) as session:
             session.add(data)
             await session.commit()
